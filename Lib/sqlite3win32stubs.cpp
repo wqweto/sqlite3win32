@@ -1,8 +1,10 @@
 #define SQLITE_API extern "C"
 #define SQLITE_STDCALL __stdcall
+#define SQLITE_CDECL __cdecl
 #define SQLITE_WIN32_MALLOC 1
 #define SQLITE_WIN32_HEAP_CREATE 1
 #define SQLITE_THREADSAFE 1
+#define SQLITE_DEFAULT_CACHE_SIZE 8192
 // #define SQLITE_USE_URI 1
 #define SQLITE_SOUNDEX 1
 #define SQLITE_OMIT_DEPRECATED 1
@@ -16,6 +18,8 @@
 #define SQLITE_ENABLE_NORMALIZE 1
 #define SQLITE_ENABLE_MATH_FUNCTIONS 1
 #define SQLITE_DQS 0
+
+# pragma warning (disable : 4229)  // anachronism used: modifiers on data are ignored
 
 #include <windows.h>
 #include "sqlite3\sqlite3.h"
